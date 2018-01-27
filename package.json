@@ -27,6 +27,8 @@
     "normalize.css": "7.0.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
+    "react-images": "^0.5.15",
+    "react-photo-gallery": "^6.0.22",
     "react-router-dom": "4.2.2",
     "react-slick": "^0.16.0",
     "react-transition-group": "^2.2.1",

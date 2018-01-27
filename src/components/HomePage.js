@@ -3,7 +3,7 @@ import HeaderCarousel from './Carousel';
 
 const HomePage = () => (
   <div>
-    <HeaderCarousel title={"Beard's Designs"} image={"/images/bullets.jpg"}/>
+    <HeaderCarousel title={"Beard's Design & Fabrication"} image={"/images/bullets.jpg"}/>
     <div>
       <div className="content">
         <h1 className="is-active">
