@@ -1,12 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import HeaderCarousel from './Carousel';
 
 const Header = () => (
   <div>
-    <nav className="navbar navbar-light navbar-expand-sm bg-dark">
+    <nav className="navbar navbar-custom navbar-light navbar-expand-sm bg-dark ">
       <NavLink className="nav-link text-light" to="/" activeClassName="active" exact={true}>Home</NavLink>
-      <ul className="navbar-nav">
+      <ul className="navbar-nav navbar-fixed-top">
         <li>
           <NavLink className="nav-link text-light" to="/gallery" activeClassName="active">Gallery</NavLink>
         </li>
@@ -15,7 +14,6 @@ const Header = () => (
         </li>
       </ul>
     </nav>
-    <HeaderCarousel />
   </div>
 );
 

@@ -6,7 +6,7 @@ class HeaderCarousel extends React.Component {
     super(props);
     
     this.state = {
-      dots: true,
+      dots: false,
       fade: true,
       infinite: true,
       slidesToScroll: 1,
@@ -21,12 +21,11 @@ class HeaderCarousel extends React.Component {
     return (
       <Slider {...this.state}>
         <div className="newcontainer">
-          <img className="img-fluid" src="/images/bullets.jpg" />
-          <h1 className="text-block">Beard's Designs</h1>
+          <img className="img-fluid" src={this.props.image} />
+          <div className="text-block">
+            <h1 className="title">{this.props.title}</h1>
+          </div>
         </div>
-        <div><h3>Test2</h3></div>
-        <div><h3>Test3</h3></div>
-        <div><h3>Test4</h3></div>
       </Slider>
     );
   };
