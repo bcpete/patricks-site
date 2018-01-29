@@ -7,11 +7,16 @@ const HomePage = () => (
     <div>
       <div className="content">
         <h1 className="is-active">
-          About Me
+          About
         </h1>
-        <p>
-          You know I get the wood and I just work it. Nothing feels better than having
-          some nice firm wood to work.
+        <p className="subtitle">
+          Beard's Design & Fabrication is a one-man team started in 2017 dedicated 
+          to the idea that nothing is too large or small to create. Giving life to an 
+          idea through design, and bringing it into reality is my passion. Browse the 
+          gallery of finished, and in progress pieces, and contact me if you are 
+          interested in purchasing anything. You can also send me an email, call/text 
+          me, or use the contact page on the site to reach out with anything you want 
+          me to make and I'll get started right away.
         </p>
       </div>
     </div>
