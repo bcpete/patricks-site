@@ -1,0 +1,30 @@
+.footer{
+  background-color: #343a40;
+  color: white;
+  height: 22rem;
+  padding: 0 1.6rem 0 1.6rem;
+  display: block;
+}
+
+.footer-profiles{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  list-style-type: none;
+}
+
+.icon{
+  width: 45px;
+  height: 45px;
+  display: block;
+  padding: 5px;
+  margin-top: 3rem;
+}
+
+.plug{
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #999999;
+  padding-left: 5rem;
+}

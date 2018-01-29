@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderCarousel from './Carousel';
+import Footer from './Footer';
 
 const HomePage = () => (
   <div>
@@ -20,6 +21,7 @@ const HomePage = () => (
         </p>
       </div>
     </div>
+    <Footer />
   </div>
 );
 
