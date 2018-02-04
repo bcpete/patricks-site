@@ -1,0 +1,16 @@
+.big-button{
+  background-color: darken(blanchedalmond, 15%);
+  border: none;
+  border-bottom: .3rem solid rgb(167, 114, 36);
+  border-right: .1rem solid rgb(167, 114, 36);
+  color: darken(rgb(197, 126, 20), 5%);
+  font-weight: bold;
+  padding: 5px;
+  width: 100%;
+  font-size: 32px;
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-between;
+}

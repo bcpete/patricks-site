@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoGallery from '../components/PhotoGallery';
+import Footer from '../components/Footer';
 
 class GalleryPage extends React.Component {
   constructor(props){
@@ -199,15 +200,18 @@ class GalleryPage extends React.Component {
   render(){
     return (
       <div>
-        <button onClick={this.showFinishedWork}>
-          Finished Works
-        </button>
-        <button onClick={this.showInProgress}>
-          Works In Progress
-        </button>
+        <div className="button-container">
+          <button className="big-button" onClick={this.showFinishedWork}>
+            Finished Works
+          </button>
+          <button className="big-button" onClick={this.showInProgress}>
+            Works In Progress
+          </button>
+        </div>
         <div>
           {this.state.finishedWorkVisible ? <PhotoGallery photos={this.state.finishedPhotos}/> : <PhotoGallery photos={this.state.inProgressPhotos} />}
         </div>
+        <Footer />
       </div>
     );
   };
