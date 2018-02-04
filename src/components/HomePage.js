@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const HomePage = () => (
   <div>
-    <HeaderCarousel title={"Beard's Design & Fabrication"} image={"/images/bullets.jpg"}/>
+    <HeaderCarousel title={"Beard's Design & Fabrication"} image={"/images/frontpage.png"}/>
     <div>
       <div className="content">
         <h1 className="is-active">

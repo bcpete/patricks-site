@@ -21,8 +21,10 @@ const Footer = () => (
         </li>
       </ul>
       <p className="plug">
-        Website designed and developed by Brady Peters 
+        Website designed and developed by 
+        <a href="https://github.com/bcpete">Brady Peters</a>
       </p>
+      <p className="plug">bradycpeters@gmail.com</p>
     </div>
   </footer>
 );

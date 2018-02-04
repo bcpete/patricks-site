@@ -16,7 +16,7 @@ class PhotoGallery extends React.Component {
     
     this.state = {
       currentImage: 0,
-      lightboxIsOpen: false
+      lightboxIsOpen: false,
     };
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
