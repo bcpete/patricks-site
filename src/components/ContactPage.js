@@ -2,35 +2,40 @@ import React from 'react';
 import Footer from '../components/Footer';
 
 const ContactPage = () => (
-  <div className="content">
-    <div className="quick-contact">
-      <div className="contact-option">
-        <h3>Email: </h3>
-        <a href="mailto:beardpatrick80@gmail.com">beardpatrick80@gmail.com</a>
+  <div>
+    <div className="contact-container">
+      <div className="contact-form">
+        <form>
+          <div className="input-half">
+            <input name="fromName" placeholder="Your Name" type="text"/>
+          </div>
+          <div className="input-half">
+            <input name="fromEmail" placeholder="Your Email" type="email" />
+          </div>
+          <div className="input-half">
+            <input name="fromPhone" placeholder="Your Phone Number" type="text"/>
+          </div>
+          <div className="input-half">
+            <input name="fromSubject" placeholder="Subject" type="text"/>
+          </div>
+          <div className="input-full">
+            <textarea name="messageBody" placeHolder="Your Message" />
+          </div>
+          <input type="submit" value="Send Message" />
+        </form>
       </div>
-      <div className="contact-option">
-        <h3>Phone Number:</h3>
-        <a href="">555-555-5555</a>
+      <div className="contact-info">
+        <h1>Patrick Beard</h1>
+        <hr />
+        <div className="contact-info_text-block">
+          <h2> Email </h2>
+          <hr />
+          <p> blah@blah.blah </p>
+          <h2> Phone </h2>
+          <hr />
+          <p> 555-555-5555 </p>
+        </div>
       </div>
-    </div>
-    <div className="contact-form">
-      <form>
-        <div className="contact-phone">
-          <label for="contact-phone">Phone Number</label>
-          <input name="contact-phone" />
-        </div>
-        <div className="contact-email">
-          <label>Email Address</label>
-          <input name="contact-email" />
-        </div>
-        <div className="contact-message">
-          <label>Message</label>
-          <input name="contact-message"/>
-        </div>
-        <div className="contact-submit">
-          <input name="submit" type="submit" value="Send!"/>
-        </div>
-      </form>
     </div>
     <Footer />
   </div>
