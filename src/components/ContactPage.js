@@ -10,54 +10,59 @@ const ContactPage = ({
   touched,
   handleBlur,
   handleChange,
-  dirty
+  dirty,
+  handleReset,
 }) => (
   <div>
     <div className="contact-container">
       <Form className="contact-form">
         <h1 className="contact-title">Contact Me!</h1>
         <div className="input-field">
-          <Field className={errors.email && touched.email ? 'input error' : 'input' } 
+          <Field className={ errors.email && touched.email ? 'input error' : 'input' } 
             type="email" 
             name="email" 
-            placeholder="Email"
+            placeholder="Enter Your Email"
             onChange={handleChange}
             onBlur={handleBlur} 
           />
-          { errors.email && <p className="error">{ errors.email }</p>}
+          { errors.email && touched.email ? <p className="error">{ errors.email } </p> : '' }
         </div>
         <div className="input-field">
-          <Field className={errors.phone && touched.phone ? 'input error' : 'input' } 
+          <Field className={ errors.phone && touched.phone ? 'input error' : 'input' } 
             type="text" 
             name="phone" 
-            placeholder="Phone Number"
+            placeholder="Enter Your Phone Number"
             onChange={handleChange}
             onBlur={handleBlur} 
           />
-          { errors.phone && <p className="error">{ errors.phone }</p>}
+          { errors.phone && touched.phone ? <p className="error">{ errors.phone }</p> : '' }
         </div>
         <div className="input-field">
-          <Field className={errors.name && touched.name ? 'input error' : 'input' } 
+          <Field className={ touched.name && errors.name ? 'input error' : 'input' } 
             type="text" 
             name="name" 
-            placeholder="Name"
+            placeholder="Enter Your Full Name"
             onChange={handleChange}
             onBlur={handleBlur}  
           />
-          { errors.name && <p className="error">{ errors.name }</p>}
+          { errors.name && touched.name ?  <p className="error">{ errors.name }</p> : '' }
         </div>
         <div className="input-field">
-          <Field className={errors.message && touched.message ? 'input error' : 'input' } 
+          <Field className={ errors.message && touched.message ? 'input error' : 'input' } 
             type="text" 
             name="message" 
-            placeholder="Message" 
+            placeholder="Enter Your Message" 
             onChange={handleChange}
             onBlur={handleBlur} 
           />
-          { errors.message && <p className="error">{ errors.message }</p>}
+          { errors.message && touched.message ? <p className="error">{ errors.message }</p> : '' }
         </div>
         <div className="input-field">
-          <button className="big-button" type="submit" disabled={ !dirty || Object.keys(errors).length > 0 }>Submit</button>
+          <button className="big-button" 
+            type="submit"
+            onClick={ handleReset }
+            disabled={ !dirty || Object.keys(errors).length > 0 }>Submit
+          </button>
         </div>
       </Form>
         <div className="contact-info">
@@ -87,6 +92,7 @@ const ContactFormik = withFormik({
   },
   handleSubmit(values) {
     console.log(values);
+    
   },
   validationSchema: Yup.object().shape({
     email: Yup.string().email('Invalid Email Address!').required('Email is Required!'),
