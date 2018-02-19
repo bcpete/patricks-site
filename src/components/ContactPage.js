@@ -11,9 +11,7 @@ const ContactPage = ({
   handleBlur,
   handleChange,
   dirty,
-  handleReset,
 }) => (
-  <div>
     <div className="contact-container">
       <Form className="contact-form">
         <h1 className="contact-title">Contact Me!</h1>
@@ -60,7 +58,6 @@ const ContactPage = ({
         <div className="input-field">
           <button className="big-button" 
             type="submit"
-            onClick={ handleReset }
             disabled={ !dirty || Object.keys(errors).length > 0 }>Submit
           </button>
         </div>
@@ -77,26 +74,26 @@ const ContactPage = ({
           </div>
       </div>
     </div>
-    <Footer />
-  </div>
 );
 
 const ContactFormik = withFormik({
   mapPropsToValues({ email, phone, name, message }) {
     return {
-      email: email || '',
-      phone: phone || '',
-      name: name || '',
+      email:   email || '',
+      phone:   phone || '',
+      name:    name || '',
       message: message || '',
     }
   },
-  handleSubmit(values) {
+  handleSubmit(values, {setValues, setTouched, setErrors}, errors){
     console.log(values);
-    
+    setValues(values = '');
+    setTouched(false);
+    setErrors(errors = '');
   },
   validationSchema: Yup.object().shape({
     email: Yup.string().email('Invalid Email Address!').required('Email is Required!'),
-    phone: Yup.number('Invalid Phone Number!').min(10).required('Phone Number is Required!'),
+    phone: Yup.number('Invalid Phone Number!').required('Phone Number is Required!'),
     name: Yup.string('Invalid Name!').required('Your Name is Required!'),
     message: Yup.string('Invalid Message!').required('Please Enter A Message!')
   }),

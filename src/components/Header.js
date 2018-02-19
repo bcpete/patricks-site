@@ -9,9 +9,6 @@ const Header = () => (
         <li>
           <NavLink className="nav-link text-light" to="/gallery" activeClassName="active">Gallery</NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link text-light" to="/contact" activeClassName="active">Contact</NavLink>
-        </li>
       </ul>
     </nav>
   </div>
