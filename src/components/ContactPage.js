@@ -3,9 +3,7 @@ import Footer from '../components/Footer';
 import { withFormik, Form, Field } from 'formik';
 import Yup from 'yup';
 import { render } from 'react-dom';
-import { mailgunApiKey, mailgunDomain } from '../../apikey/mailgunapi';
-var Mailgun = require('mailgun').Mailgun;
-var mg = new Mailgun(`${mailgunApiKey}`)
+import axios from 'axios';
 
 const ContactPage = ({
   values,
@@ -90,20 +88,19 @@ const ContactFormik = withFormik({
   },
   handleSubmit(values, {setValues, setTouched, setErrors}, errors){
     console.log(values);
-    mg.sendText('test@test.com', ['brady <bradycpeters@gmail.com>'],
-    'This is the subject',
-    'This is the text',
-    'noreply@example.com', {},
-    function(err) {
-      if(err){
-        console.log('Oh shit: ' + err);
-      }else{
-        console.log('success');
-      }
+    axios.post(`/email`, {
+      name: `${values.name}`,
+      email: `${values.email}`,
+      phone: `${values.phone}`,
+      message: `${values.message}`
+    }).then((res) => {
+      console.log(res.status);
+    }).catch((err) => {
+      console.log(err);
     });
-    // setValues(values = '');
-    // setTouched(false);
-    // setErrors(errors = '');
+    setValues(values = '');
+    setTouched(false);
+    setErrors(errors = '');
   },
   validationSchema: Yup.object().shape({
     email: Yup.string().email('Invalid Email Address!').required('Email is Required!'),
